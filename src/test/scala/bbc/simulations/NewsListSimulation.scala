@@ -14,6 +14,6 @@ class NewsListSimulation extends Simulation {
 
   val getUKPoliticsPost = scenario("UKPoliticsPost").exec(ukPoliticsPost)
 
-  setUp(getNewsPageScn.inject(rampUsers(40) over(1 seconds)).protocols(httpConf)
+  setUp(getNewsPageScn.exec(getUKPoliticsPost).inject(constantUsersPerSec(40) during (60 seconds)).protocols(httpConf)
     .protocols(httpConf))
 }
