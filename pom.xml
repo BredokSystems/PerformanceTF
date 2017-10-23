@@ -24,10 +24,10 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <profiles>
   <profile>
   <id>performance</id>
-
   <build>
     <plugins>
       <plugin>
